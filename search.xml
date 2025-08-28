@@ -4,6 +4,219 @@
   
     
     <entry>
+      <title>群晖NAS搭建WordPress博客</title>
+      <link href="/2025/08/28/%E7%BE%A4%E6%99%96NAS%E6%90%AD%E5%BB%BAWordPress%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2025/08/28/%E7%BE%A4%E6%99%96NAS%E6%90%AD%E5%BB%BAWordPress%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<div style="position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 8px; overflow: hidden; background: #000;"><iframe  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"  src="https://player.bilibili.com/player.html?bvid=BV1LStNzaEvA&page=1&autoplay=0&high_quality=1"  scrolling="no"  frameborder="no"  allowfullscreen></iframe></div><p>使用过 wordpress 的站长应该都清楚，wordpress 在安装的时候会默认绑定当前的域名，后续绑定其他的域名但是页面的链接也还是安装时候的域名。那么今天给大家分享一下 wordpress 绑定多个域名或者取消域名绑定限制的方法。</p><p>1、打开网站根目录下的 wp-config.php，在 <code>define(&#39;WP_DEBUG&#39;, false);</code> 后面添加下面内容：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define(&#x27;WP_HOME&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define( &#x27;WP_CONTENT_URL&#x27;,  &#x27;//&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;] . &#x27;/wp-content&#x27;);</span><br></pre></td></tr></table></figure><p>2、群晖部署的输入下面代码才有删除、读取权限，放底部就行。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&quot;FS_METHOD&quot;, &quot;direct&quot;);</span><br><span class="line">define(&quot;FS_CHMOD_DIR&quot;, 0777); </span><br><span class="line">define(&quot;FS_CHMOD_FILE&quot;, 0777);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PHP-网址-短链接生成源码</title>
+      <link href="/2025/08/28/PHP-%E7%BD%91%E5%9D%80-%E7%9F%AD%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E6%BA%90%E7%A0%81/"/>
+      <url>/2025/08/28/PHP-%E7%BD%91%E5%9D%80-%E7%9F%AD%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E6%BA%90%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwhk.lanzoub.com/iAZwp30f8p1i">https://wwhk.lanzoub.com/iAZwp30f8p1i</a></p><p>项目 需求说明<br>PHP 版本 推荐 7.4，最低 5.6<br>数据库 ✅ MySQL 或 MariaDB<br>安装入口 域名 +install&#x2F;index.html（首次安装提示）<br>后台链接 ✅ 存在域名 + &#x2F;admin 管理后台<br>本地部署 localhost 或 127.0.0.1 数据库和 PHP 网站在同一台服务器上</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>php实现在线聊天系统</title>
+      <link href="/2025/08/28/php%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2025/08/28/php%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p>源码地址：<a href="https://wwhk.lanzoub.com/iV42r301eaqf">https://wwhk.lanzoub.com/iV42r301eaqf</a></p><p>支持多人在线同时聊天<br>注册记录 ip，封禁 ip 功能<br>懒得写了，直接进入安装步骤</p><p>新建数据库，数据库名必须为 chat-room<br>懒得开电脑具体我也忘了，安装会提醒的</p><p>访问 ：域名&#x2F;install.php<br>输入数据库信息和管理员信息</p><p>安装完成之后直接进入管理后台</p><p>前台 域名&#x2F;chat.php<br>可以设置一下默认文件，这样用户打开方便，否则会出现 404</p><p>觉得好用支持一下！有能力的自己二开</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>去水印源码</title>
+      <link href="/2025/08/28/%E5%8E%BB%E6%B0%B4%E5%8D%B0%E6%BA%90%E7%A0%81/"/>
+      <url>/2025/08/28/%E5%8E%BB%E6%B0%B4%E5%8D%B0%E6%BA%90%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p>后台支持修改公告使用方式，网站支持的应用图标等，应用图标支持添加修改和一键删除</p><p>更新：<br>1：添加下载图标，pc 端图片和视频进行排序更美观<br>2：更新首页更美观，后台点击修改不再刷新浏览器<br>访问 install.php 进行安装</p><p>你网站的后台地址是：域名 +&#x2F;admin.php</p><p>把下面代码放到：index.php 最后面</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">let cleaning = false;</span><br><span class="line">let justCleaned = false;</span><br><span class="line"></span><br><span class="line">document.getElementById(&quot;parseButton&quot;).addEventListener(&quot;click&quot;, function (event) &#123;</span><br><span class="line">    const input = document.getElementById(&quot;urlInput&quot;);</span><br><span class="line">    const text = input.value;</span><br><span class="line"></span><br><span class="line">    // 如果刚清洗过，放行执行默认行为（表单提交 / onclick）</span><br><span class="line">    if (justCleaned) &#123;</span><br><span class="line">        justCleaned = false;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 拦截第一次点击，先清洗</span><br><span class="line">    event.preventDefault();</span><br><span class="line"></span><br><span class="line">    // 通用 URL 匹配</span><br><span class="line">    const pattern = /(https?:\/\/[^\s\u4e00-\u9fa5，,。；、”‘“”…]+)/i;</span><br><span class="line">    const match = text.match(pattern);</span><br><span class="line"></span><br><span class="line">    if (match &amp;&amp; match[1]) &#123;</span><br><span class="line">        input.value = match[1].trim();</span><br><span class="line"></span><br><span class="line">        // 设置标志，避免递归死循环</span><br><span class="line">        cleaning = true;</span><br><span class="line">        justCleaned = true;</span><br><span class="line"></span><br><span class="line">        // 模拟再次点击按钮（不会触发清洗逻辑）</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            document.getElementById(&quot;parseButton&quot;).click();</span><br><span class="line">        &#125;, 50);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        alert(&quot;未检测到有效的链接，请粘贴包含网址的内容。&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>带计数版修改：数据库</p><ul><li>登录宝塔</li><li>点击左侧【数据库】</li><li>找到你的网站数据库，点击【管理】（会打开 phpMyAdmin）</li><li>同样点击【SQL】输入框粘贴那段代码并运行即可</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE stats (</span><br><span class="line">    type ENUM(&#x27;visit&#x27;, &#x27;parse&#x27;) PRIMARY KEY,</span><br><span class="line">    count INT DEFAULT 0</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">INSERT INTO stats (type, count) VALUES (&#x27;visit&#x27;, 0), (&#x27;parse&#x27;, 0);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>指定ipa签名源码</title>
+      <link href="/2025/08/28/%E6%8C%87%E5%AE%9Aipa%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81/"/>
+      <url>/2025/08/28/%E6%8C%87%E5%AE%9Aipa%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>演示网站：ios.993613.xyz</p><p>CentOS 7.6 Nginx 1.24 PHP 7.4<br>1、添加站点上传源码，根目录解压文件</p><p>2、PHP 禁用函数：exec</p><p>3、关闭防跨站攻击，必须开启 SSL</p><p>4、你的 IPA 放在根目录 app 文件里面即可</p><p>5、修改 esign.php 文件里面的指定 app 文件名</p><p>6、重启 PHP</p><p>7、设置计划任务，路径改成你自己的</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /www/wwwroot/sign.dumpapp.com/public/temp/*</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ipa在线签名源码(免授权）</title>
+      <link href="/2025/08/28/ipa%E5%9C%A8%E7%BA%BF%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81-%E5%85%8D%E6%8E%88%E6%9D%83%EF%BC%89/"/>
+      <url>/2025/08/28/ipa%E5%9C%A8%E7%BA%BF%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81-%E5%85%8D%E6%8E%88%E6%9D%83%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>演示网站：ipa.993613.xyz</p><p>教程链接：<a href="https://dumpappdoc.feishu.cn/docx/Vc2mdGO03o9j45xAraIcOkkunnA">https://dumpappdoc.feishu.cn/docx/Vc2mdGO03o9j45xAraIcOkkunnA</a></p><p>源码链接：<a href="https://wwhk.lanzoub.com/iHbyQ2yuia0f%EF%BC%88%E5%B7%B2%E7%A0%B4%E8%A7%A3%E6%8E%88%E6%9D%83%EF%BC%89">https://wwhk.lanzoub.com/iHbyQ2yuia0f（已破解授权）</a></p><p>宝塔计划任务定时清理命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line"># 定义目标目录</span><br><span class="line">TEMP_DIR=&quot;/www/wwwroot/ipa.kk8i.cn_1004/public/temp&quot;</span><br><span class="line"></span><br><span class="line"># 第一步：删除temp目录下所有非ok的文件夹</span><br><span class="line">find &quot;$TEMP_DIR&quot; -mindepth 1 -maxdepth 1 ! -name &quot;ok&quot; -exec rm -rf &#123;&#125; +</span><br><span class="line"></span><br><span class="line"># 第二步：清空ok文件夹内的所有内容</span><br><span class="line">if [ -d &quot;$TEMP_DIR/ok&quot; ]; then</span><br><span class="line">    find &quot;$TEMP_DIR/ok&quot; -mindepth 1 -exec rm -rf &#123;&#125; +</span><br><span class="line">else</span><br><span class="line">    echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) - 警告：ok文件夹不存在&quot; &gt;&gt; /tmp/clean_temp.log</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># 添加日志记录（可选）</span><br><span class="line">echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) - 清理完成&quot; &gt;&gt; /tmp/clean_temp.log</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>7-ZIP、RAR、ZIP暴力破解</title>
+      <link href="/2025/08/28/7-ZIP%E3%80%81RAR%E3%80%81ZIP%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/"/>
+      <url>/2025/08/28/7-ZIP%E3%80%81RAR%E3%80%81ZIP%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>Kraken 下载：<a href="https://wwhk.lanzoub.com/i7nwV2ykbivc">https://wwhk.lanzoub.com/i7nwV2ykbivc</a></p><p>字典下载：<a href="https://www.ilanzou.com/s/AULZVOdG">https://www.ilanzou.com/s/AULZVOdG</a></p><p>将加密文件和密码字典放置到对应目录</p><p><img src="https://cloud.anjing.eu.org/file/LmUGnlGn.jpg" alt="v2-e1ce76135b775e9b3e495c3b21cc26d1_1440w.jpg"></p><p><strong>打开 Kraken.exe，输入 Y 表示同意协议</strong></p><p><img src="https://cloud.anjing.eu.org/file/twLLhIny.jpg" alt="v2-a1adaa1896e1ea2721d1b15bccf37d3e_1440w.jpg"></p><p><strong>输入 1，表示新建任务</strong></p><p><img src="https://cloud.anjing.eu.org/file/dzmfJmz4.jpg" alt="v2-c97ef654b9137d5ed4343b15585c026f_1440w.jpg"></p><p><strong>输入 1，选择压缩文件类型</strong></p><p><img src="https://cloud.anjing.eu.org/file/IXvwYz1U.jpg" alt="v2-bb05dd2b8d71311255385d1a357f5a29_1440w.jpg"></p><p><strong>输入 2，选择方法【字典遍历】</strong></p><p><img src="https://cloud.anjing.eu.org/file/lS3BqQak.jpg" alt="v2-1601489cd9fd355c9c0e4f3f6d5391cb_1440w.jpg"></p><p><strong>输入 4，选择高速模式</strong></p><p><img src="https://cloud.anjing.eu.org/file/O9JFVu9G.jpg" alt="v2-091482e888ad64e3d91d8453d3e328e3_1440w.jpg"></p><p><strong>成功获取密码</strong></p><p><img src="https://cloud.anjing.eu.org/file/lMkYA9ME.jpg" alt="v2-cd632f46cd4cfd5144f3904fedc87824_1440w.jpg"></p><p>参考地址：<a href="https://zhuanlan.zhihu.com/p/26352642998">https://zhuanlan.zhihu.com/p/26352642998</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 破解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 破解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ip探针部署</title>
+      <link href="/2025/08/28/ip%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2/"/>
+      <url>/2025/08/28/ip%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<p>源码地址：<a href="https://wwhk.lanzoub.com/iU0l72z66z2h">https://wwhk.lanzoub.com/iU0l72z66z2h</a></p><p>推荐服务器：<a href="https://my.yecaoyun.com/aff.php?aff=3891">https://my.yecaoyun.com/aff.php?aff=3891</a></p><p>1.服务器一台（需要便宜香港云服务器可以加 Q：3890053645）</p><p>2.域名一条<br>3.绑定域名(选 php7.4)<br>4.上传源码<br>5.源码里配置一下数据库，数据库信息在 config.php 里面填就行<br>6.导入 sql<br>后台登录方法  域名加&#x2F;admin  例如域名是 xxx.com  那么后台登录地址为 xxx.com&#x2F;admin，后台账号：admin 密码：woshizhu<br>7.就搭建完成了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微信注入禁止热更新插件</title>
+      <link href="/2025/08/28/%E5%BE%AE%E4%BF%A1%E6%B3%A8%E5%85%A5%E7%A6%81%E6%AD%A2%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8F%92%E4%BB%B6/"/>
+      <url>/2025/08/28/%E5%BE%AE%E4%BF%A1%E6%B3%A8%E5%85%A5%E7%A6%81%E6%AD%A2%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8F%92%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>载文件解压出来，利用轻松签\全能签等工具注入插件 <a href="https://wwhk.lanzoub.com/ibPfl2xdwuxe">https://wwhk.lanzoub.com/ibPfl2xdwuxe</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nps和npm安装流程</title>
       <link href="/2025/08/28/nps%E5%92%8Cnpm%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/"/>
       <url>/2025/08/28/nps%E5%92%8Cnpm%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/</url>
