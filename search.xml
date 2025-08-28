@@ -4,6 +4,321 @@
   
     
     <entry>
+      <title>群晖NAS搭建WordPress博客</title>
+      <link href="/2025/08/28/%E7%BE%A4%E6%99%96NAS%E6%90%AD%E5%BB%BAWordPress%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2025/08/28/%E7%BE%A4%E6%99%96NAS%E6%90%AD%E5%BB%BAWordPress%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<div style="position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 8px; overflow: hidden; background: #000;"><iframe  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"  src="https://player.bilibili.com/player.html?bvid=BV1LStNzaEvA&page=1&autoplay=0&high_quality=1"  scrolling="no"  frameborder="no"  allowfullscreen></iframe></div><p>使用过 wordpress 的站长应该都清楚，wordpress 在安装的时候会默认绑定当前的域名，后续绑定其他的域名但是页面的链接也还是安装时候的域名。那么今天给大家分享一下 wordpress 绑定多个域名或者取消域名绑定限制的方法。</p><p>1、打开网站根目录下的 wp-config.php，在 <code>define(&#39;WP_DEBUG&#39;, false);</code> 后面添加下面内容：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define(&#x27;WP_HOME&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define( &#x27;WP_CONTENT_URL&#x27;,  &#x27;//&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;] . &#x27;/wp-content&#x27;);</span><br></pre></td></tr></table></figure><p>2、群晖部署的输入下面代码才有删除、读取权限，放底部就行。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&quot;FS_METHOD&quot;, &quot;direct&quot;);</span><br><span class="line">define(&quot;FS_CHMOD_DIR&quot;, 0777); </span><br><span class="line">define(&quot;FS_CHMOD_FILE&quot;, 0777);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PHP-网址-短链接生成源码</title>
+      <link href="/2025/08/28/PHP-%E7%BD%91%E5%9D%80-%E7%9F%AD%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E6%BA%90%E7%A0%81/"/>
+      <url>/2025/08/28/PHP-%E7%BD%91%E5%9D%80-%E7%9F%AD%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E6%BA%90%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwhk.lanzoub.com/iAZwp30f8p1i">https://wwhk.lanzoub.com/iAZwp30f8p1i</a></p><p>项目 需求说明<br>PHP 版本 推荐 7.4，最低 5.6<br>数据库 ✅ MySQL 或 MariaDB<br>安装入口 域名 +install&#x2F;index.html（首次安装提示）<br>后台链接 ✅ 存在域名 + &#x2F;admin 管理后台<br>本地部署 localhost 或 127.0.0.1 数据库和 PHP 网站在同一台服务器上</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>php实现在线聊天系统</title>
+      <link href="/2025/08/28/php%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2025/08/28/php%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p>源码地址：<a href="https://wwhk.lanzoub.com/iV42r301eaqf">https://wwhk.lanzoub.com/iV42r301eaqf</a></p><p>支持多人在线同时聊天<br>注册记录 ip，封禁 ip 功能<br>懒得写了，直接进入安装步骤</p><p>新建数据库，数据库名必须为 chat-room<br>懒得开电脑具体我也忘了，安装会提醒的</p><p>访问 ：域名&#x2F;install.php<br>输入数据库信息和管理员信息</p><p>安装完成之后直接进入管理后台</p><p>前台 域名&#x2F;chat.php<br>可以设置一下默认文件，这样用户打开方便，否则会出现 404</p><p>觉得好用支持一下！有能力的自己二开</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>去水印源码</title>
+      <link href="/2025/08/28/%E5%8E%BB%E6%B0%B4%E5%8D%B0%E6%BA%90%E7%A0%81/"/>
+      <url>/2025/08/28/%E5%8E%BB%E6%B0%B4%E5%8D%B0%E6%BA%90%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p>后台支持修改公告使用方式，网站支持的应用图标等，应用图标支持添加修改和一键删除</p><p>更新：<br>1：添加下载图标，pc 端图片和视频进行排序更美观<br>2：更新首页更美观，后台点击修改不再刷新浏览器<br>访问 install.php 进行安装</p><p>你网站的后台地址是：域名 +&#x2F;admin.php</p><p>把下面代码放到：index.php 最后面</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">let cleaning = false;</span><br><span class="line">let justCleaned = false;</span><br><span class="line"></span><br><span class="line">document.getElementById(&quot;parseButton&quot;).addEventListener(&quot;click&quot;, function (event) &#123;</span><br><span class="line">    const input = document.getElementById(&quot;urlInput&quot;);</span><br><span class="line">    const text = input.value;</span><br><span class="line"></span><br><span class="line">    // 如果刚清洗过，放行执行默认行为（表单提交 / onclick）</span><br><span class="line">    if (justCleaned) &#123;</span><br><span class="line">        justCleaned = false;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 拦截第一次点击，先清洗</span><br><span class="line">    event.preventDefault();</span><br><span class="line"></span><br><span class="line">    // 通用 URL 匹配</span><br><span class="line">    const pattern = /(https?:\/\/[^\s\u4e00-\u9fa5，,。；、”‘“”…]+)/i;</span><br><span class="line">    const match = text.match(pattern);</span><br><span class="line"></span><br><span class="line">    if (match &amp;&amp; match[1]) &#123;</span><br><span class="line">        input.value = match[1].trim();</span><br><span class="line"></span><br><span class="line">        // 设置标志，避免递归死循环</span><br><span class="line">        cleaning = true;</span><br><span class="line">        justCleaned = true;</span><br><span class="line"></span><br><span class="line">        // 模拟再次点击按钮（不会触发清洗逻辑）</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            document.getElementById(&quot;parseButton&quot;).click();</span><br><span class="line">        &#125;, 50);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        alert(&quot;未检测到有效的链接，请粘贴包含网址的内容。&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>带计数版修改：数据库</p><ul><li>登录宝塔</li><li>点击左侧【数据库】</li><li>找到你的网站数据库，点击【管理】（会打开 phpMyAdmin）</li><li>同样点击【SQL】输入框粘贴那段代码并运行即可</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE stats (</span><br><span class="line">    type ENUM(&#x27;visit&#x27;, &#x27;parse&#x27;) PRIMARY KEY,</span><br><span class="line">    count INT DEFAULT 0</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">INSERT INTO stats (type, count) VALUES (&#x27;visit&#x27;, 0), (&#x27;parse&#x27;, 0);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>指定ipa签名源码</title>
+      <link href="/2025/08/28/%E6%8C%87%E5%AE%9Aipa%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81/"/>
+      <url>/2025/08/28/%E6%8C%87%E5%AE%9Aipa%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>演示网站：ios.993613.xyz</p><p>CentOS 7.6 Nginx 1.24 PHP 7.4<br>1、添加站点上传源码，根目录解压文件</p><p>2、PHP 禁用函数：exec</p><p>3、关闭防跨站攻击，必须开启 SSL</p><p>4、你的 IPA 放在根目录 app 文件里面即可</p><p>5、修改 esign.php 文件里面的指定 app 文件名</p><p>6、重启 PHP</p><p>7、设置计划任务，路径改成你自己的</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /www/wwwroot/sign.dumpapp.com/public/temp/*</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ipa在线签名源码(免授权）</title>
+      <link href="/2025/08/28/ipa%E5%9C%A8%E7%BA%BF%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81-%E5%85%8D%E6%8E%88%E6%9D%83%EF%BC%89/"/>
+      <url>/2025/08/28/ipa%E5%9C%A8%E7%BA%BF%E7%AD%BE%E5%90%8D%E6%BA%90%E7%A0%81-%E5%85%8D%E6%8E%88%E6%9D%83%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>演示网站：ipa.993613.xyz</p><p>教程链接：<a href="https://dumpappdoc.feishu.cn/docx/Vc2mdGO03o9j45xAraIcOkkunnA">https://dumpappdoc.feishu.cn/docx/Vc2mdGO03o9j45xAraIcOkkunnA</a></p><p>源码链接：<a href="https://wwhk.lanzoub.com/iHbyQ2yuia0f%EF%BC%88%E5%B7%B2%E7%A0%B4%E8%A7%A3%E6%8E%88%E6%9D%83%EF%BC%89">https://wwhk.lanzoub.com/iHbyQ2yuia0f（已破解授权）</a></p><p>宝塔计划任务定时清理命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line"># 定义目标目录</span><br><span class="line">TEMP_DIR=&quot;/www/wwwroot/ipa.kk8i.cn_1004/public/temp&quot;</span><br><span class="line"></span><br><span class="line"># 第一步：删除temp目录下所有非ok的文件夹</span><br><span class="line">find &quot;$TEMP_DIR&quot; -mindepth 1 -maxdepth 1 ! -name &quot;ok&quot; -exec rm -rf &#123;&#125; +</span><br><span class="line"></span><br><span class="line"># 第二步：清空ok文件夹内的所有内容</span><br><span class="line">if [ -d &quot;$TEMP_DIR/ok&quot; ]; then</span><br><span class="line">    find &quot;$TEMP_DIR/ok&quot; -mindepth 1 -exec rm -rf &#123;&#125; +</span><br><span class="line">else</span><br><span class="line">    echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) - 警告：ok文件夹不存在&quot; &gt;&gt; /tmp/clean_temp.log</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># 添加日志记录（可选）</span><br><span class="line">echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) - 清理完成&quot; &gt;&gt; /tmp/clean_temp.log</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>7-ZIP、RAR、ZIP暴力破解</title>
+      <link href="/2025/08/28/7-ZIP%E3%80%81RAR%E3%80%81ZIP%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/"/>
+      <url>/2025/08/28/7-ZIP%E3%80%81RAR%E3%80%81ZIP%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>Kraken 下载：<a href="https://wwhk.lanzoub.com/i7nwV2ykbivc">https://wwhk.lanzoub.com/i7nwV2ykbivc</a></p><p>字典下载：<a href="https://www.ilanzou.com/s/AULZVOdG">https://www.ilanzou.com/s/AULZVOdG</a></p><p>将加密文件和密码字典放置到对应目录</p><p><img src="https://cloud.anjing.eu.org/file/LmUGnlGn.jpg" alt="v2-e1ce76135b775e9b3e495c3b21cc26d1_1440w.jpg"></p><p><strong>打开 Kraken.exe，输入 Y 表示同意协议</strong></p><p><img src="https://cloud.anjing.eu.org/file/twLLhIny.jpg" alt="v2-a1adaa1896e1ea2721d1b15bccf37d3e_1440w.jpg"></p><p><strong>输入 1，表示新建任务</strong></p><p><img src="https://cloud.anjing.eu.org/file/dzmfJmz4.jpg" alt="v2-c97ef654b9137d5ed4343b15585c026f_1440w.jpg"></p><p><strong>输入 1，选择压缩文件类型</strong></p><p><img src="https://cloud.anjing.eu.org/file/IXvwYz1U.jpg" alt="v2-bb05dd2b8d71311255385d1a357f5a29_1440w.jpg"></p><p><strong>输入 2，选择方法【字典遍历】</strong></p><p><img src="https://cloud.anjing.eu.org/file/lS3BqQak.jpg" alt="v2-1601489cd9fd355c9c0e4f3f6d5391cb_1440w.jpg"></p><p><strong>输入 4，选择高速模式</strong></p><p><img src="https://cloud.anjing.eu.org/file/O9JFVu9G.jpg" alt="v2-091482e888ad64e3d91d8453d3e328e3_1440w.jpg"></p><p><strong>成功获取密码</strong></p><p><img src="https://cloud.anjing.eu.org/file/lMkYA9ME.jpg" alt="v2-cd632f46cd4cfd5144f3904fedc87824_1440w.jpg"></p><p>参考地址：<a href="https://zhuanlan.zhihu.com/p/26352642998">https://zhuanlan.zhihu.com/p/26352642998</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 破解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 破解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ip探针部署</title>
+      <link href="/2025/08/28/ip%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2/"/>
+      <url>/2025/08/28/ip%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<p>源码地址：<a href="https://wwhk.lanzoub.com/iU0l72z66z2h">https://wwhk.lanzoub.com/iU0l72z66z2h</a></p><p>推荐服务器：<a href="https://my.yecaoyun.com/aff.php?aff=3891">https://my.yecaoyun.com/aff.php?aff=3891</a></p><p>1.服务器一台（需要便宜香港云服务器可以加 Q：3890053645）</p><p>2.域名一条<br>3.绑定域名(选 php7.4)<br>4.上传源码<br>5.源码里配置一下数据库，数据库信息在 config.php 里面填就行<br>6.导入 sql<br>后台登录方法  域名加&#x2F;admin  例如域名是 xxx.com  那么后台登录地址为 xxx.com&#x2F;admin，后台账号：admin 密码：woshizhu<br>7.就搭建完成了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微信注入禁止热更新插件</title>
+      <link href="/2025/08/28/%E5%BE%AE%E4%BF%A1%E6%B3%A8%E5%85%A5%E7%A6%81%E6%AD%A2%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8F%92%E4%BB%B6/"/>
+      <url>/2025/08/28/%E5%BE%AE%E4%BF%A1%E6%B3%A8%E5%85%A5%E7%A6%81%E6%AD%A2%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8F%92%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>载文件解压出来，利用轻松签\全能签等工具注入插件 <a href="https://wwhk.lanzoub.com/ibPfl2xdwuxe">https://wwhk.lanzoub.com/ibPfl2xdwuxe</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nps和npm安装流程</title>
+      <link href="/2025/08/28/nps%E5%92%8Cnpm%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/"/>
+      <url>/2025/08/28/nps%E5%92%8Cnpm%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p>NPS 服务端:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz</span><br></pre></td></tr></table></figure><p>解压文件：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf linux_amd64_server.tar.gz</span><br></pre></td></tr></table></figure><p>安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nps install</span><br></pre></td></tr></table></figure><p>&#x2F;etc&#x2F;nps&#x2F;conf&#x2F;nps.conf 修改 443 和 80 等冲突端口</p><p>打开 NPS：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nps start</span><br></pre></td></tr></table></figure><p>NPM：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://fly-uni.com/onekey/zhumao.sh &amp;&amp; chmod 700 ./zhumao.sh &amp;&amp; ./zhumao.sh</span><br></pre></td></tr></table></figure><p>打开npm面板：IP:端口81<br>默认用户名：<a href="mailto:&#97;&#x64;&#x6d;&#x69;&#110;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">admin@example.com</a> 默认密码：changeme （必须修改用户名和密码）。</p><p>PS：NPS如果下载了，把文件上传root文件里</p><p>打开 npm 面板：IP:端口 81<br>默认用户名：<a href="mailto:&#97;&#100;&#x6d;&#105;&#x6e;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">admin@example.com</a> 默认密码：changeme （必须修改用户名和密码）。</p><p>PS：NPS 如果下载了，把文件上传 root 文件里</p><p>文件下载：<a href="https://wwcz.lanzout.com/ilPWg2tn4sqd">https://wwcz.lanzout.com/ilPWg2tn4sqd</a></p><p>NPS 官网：NPS 官网：<a href="https://ehang-io.github.io/nps/#/">https://ehang-io.github.io/nps/#/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>苹果手机远控制安卓手机</title>
+      <link href="/2025/08/28/%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9C%E6%8E%A7%E5%88%B6%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/"/>
+      <url>/2025/08/28/%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9C%E6%8E%A7%E5%88%B6%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<div style="position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 8px; overflow: hidden; background: #000;"><iframe  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"  src="https://player.bilibili.com/player.html?bvid=BV1RcVhzFEri&page=1&autoplay=0&high_quality=1"  scrolling="no"  frameborder="no"  allowfullscreen></iframe></div><p>简要操作步骤<br>&#x3D;Android 11 或更高版本（无需电脑）&#x3D;<br>1、在 iPhone 上安装 iSH<br>2、打开 iSH，安装 adb（上下滑动第四个按钮可以快速切换历史命令，左右滑动可以移动光标，滑动后按住不放，可以持续切换或移动）<br>apk add android-tools<br>3、打开安卓手机的开发者模式，找到“无线调试”并打开（注意，如果有类似于 USB 调试（安全设置）的选项，一定要开启，否则无法远程控制）<br>4、点击“使用配对码匹配设备”，记住此处的 IP 地址和端口<br>5、回到 iSH，输入以下命令并回车<br>adb pair IP 地址:端口，例如 adb pair 192.168.31.38:41617<br>6、在 iSH 中输入配对码，完成配对<br>7、在 iSH 中进行无线连接，输入：<br>adb connect IP 地址:端口，例如 adb connect 192.168.3138:41335<br>8、在 iSH 中设定无线调试端口号，使其保持不变，输入：<br>adb tcpip 端口，例如 adb tcpip 11451<br>9、此后连接时，就用手机 IP:刚才设置的端口号，这样即便关闭了无线调试，依然可以无线连接<br>10、iPhone 上安装 Scrcpy Remote<br>输入 XX 切换至 adb 模式，填写 IP 地址和端口号（首次安装后需要通过浏览器访问 scrcpy2:&#x2F;&#x2F;adb）<br>可以去 App Store 安装（6 元），也可以从 TestFlight 安装（免费，但名额有限），还可以去 Github 上下载 ipa 自签名安装（免费但操作复杂）<br>TestFlight：<a href="https://testflight.apple.com/join/9ZE6xhRt">https://testflight.apple.com/join/9ZE6xhRt</a><br>Github：<a href="https://github.com/wsvn53/scrcpy-mobile/releases">https://github.com/wsvn53/scrcpy-mobile/releases</a></p><p>&#x3D;Android 11 以下（需要电脑，同时此方也适用于 Android 11 或更高版本）&#x3D;</p><p>1、下载 Android tools：<a href="https://developer.android.com/tools/releases/platform-tools?hl=zh-cn">https://developer.android.com/tools/releases/platform-tools?hl=zh-cn</a></p><p>备用链接：<a href="https://wwhk.lanzoub.com/ikkGr32pl8mh">https://wwhk.lanzoub.com/ikkGr32pl8mh</a><br>2、解压下载的文件，通过 cmd 进入 Android tools 所在目录<br>3、用数据线将电脑手机连接，然后 cmd 中输入以下命令<br>adb devices<br>4、出现 USB 授权提示窗口，点击允许<br>5、在 cmd 中设定无线调试端口号，使其保持不变，输入：<br>adb tcpip 端口，例如 adb tcpip 2333<br>6、此后连接时，就用手机 IP:刚才设置的端口号，这样即便关闭了无线调试，依然可以无线连接<br>7、iPhone 上安装 Scrcpy Remote（首次安装后需要通过浏览器访问 scrcpy2:&#x2F;&#x2F;adb）<br>可以去 App Store 安装（6 元），也可以从 TestFlight 安装（免费，但名额有限），还可以去 Github 上下载 ipa 自签名安装（免费但操作复杂）<br>TestFlight：<a href="https://testflight.apple.com/join/9ZE6xhRt">https://testflight.apple.com/join/9ZE6xhRt</a><br>Github：<a href="https://github.com/wsvn53/scrcpy-mobile/releases">https://github.com/wsvn53/scrcpy-mobile/releases</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 远程控制 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 安卓 </tag>
+            
+            <tag> ios </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>N1盒子刷机</title>
+      <link href="/2025/08/28/N1%E7%9B%92%E5%AD%90%E5%88%B7%E6%9C%BA/"/>
+      <url>/2025/08/28/N1%E7%9B%92%E5%AD%90%E5%88%B7%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<p>刷机方法：</p><ol><li><a href="https://www.l42.cn/?golink=aHR0cHM6Ly9kb2MubGlua2Vhc2UuY29tL3poL2d1aWRlL2lzdG9yZW9zL2luc3RhbGxfc2QuaHRtbA==">参考</a>先刷到 U 盘</li><li>U 盘启动以后，终端执行 <code>install-to-emmc.sh</code>，就可以安装到 eMMC，然后就可以关机拔掉 U 盘</li><li>开机前连接 HDMI 显示器启动的话可以显示终端，所以可以接到 HDMI 看打印日志，注意必须在开机前就接上 HDMI 显示器才有效。如果接了 USB 键盘，当显示器的日志不再滚动时按键盘回车键可以进入 iStoreOS 命令行。</li><li>默认网口是 DHCP 客户端，所以 IP 不是固定的，在连接显示器启动的情况下可以在命令行执行 <code>ip addr</code> 命令查看 IP，否则在主路由后台看看最近分配的 IP 地址。</li><li>系统启动过程中，前面的 LOGO 灯会闪。一般开机后 20 秒内灯会开始闪，系统初始化完毕以后灯变成常亮。如果开机以后 30 秒灯还不闪，估计启动失败了。</li><li>如果要升级固件，不需要重新制作 U 盘或写入 eMMC，只需下载新固件（无需解压），然后在网页后台“系统”-“备份&#x2F;升级”，点击“刷写固件”按钮，上传新固件，然后按页面提示升级。</li></ol><p>如果遇到问题，或者怀疑固件 BUG，那么分以下情况重新刷机：</p><ul><li>如果盒子是原厂固件：如果版本比较高要先降级到 2.19（具体怎么降级 B 站很多教程，至少 Bootloader 要降级），降级以后进安卓系统，联网获取 IP，然后插上制作好的 U 盘，然后用电脑执行 <code>adb connect 盒子IP</code> 连接盒子，再执行 <code>adb shell reboot update</code>，系统会自动重启几次，之后就会进入 iStoreOS 了。</li><li>如果盒子原本就是 Linux 系统（非安卓），例如 armbian 或 flippy 的固件：那只要插上制作好的 U 盘即可启动到 iStoreOS。</li><li>如果原本是砖，或者想完全恢复出厂状态，或者遇到其他系统启动问题：那么参考 B 站的救砖教程（可能需要拆机），救砖以后就按原厂固件刷机流程。</li></ul><p><a href="https://">https://fw0.koolcenter.com/iStoreOS/alpha/n1/istoreos-amlogic-meson-phicomm_n1-squashfs-20240329.img.gz</a></p><p><a href="https://">https://fw0.koolcenter.com/iStoreOS/alpha/n1/istoreos-22.03.6-2024043010-phicomm_n1-squashfs.img.gz</a></p><p>参考链接：<a href="https://">https://fw.koolcenter.com/iStoreOS/alpha/n1/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> N1盒子 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> N1盒子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>N1盒子安装记录</title>
+      <link href="/2025/08/28/N1%E7%9B%92%E5%AD%90%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+      <url>/2025/08/28/N1%E7%9B%92%E5%AD%90%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>一、把防火墙全部接受</p><p>二、点击 lan 接口，防火墙改成 wan。</p><p><img src="https://cloud.anjing.eu.org/file/qMizPEP2.jpg" alt="17cd3163716a48908cfb49ce7b9dad56~tplv-tt-post_640_360.jpg"></p><p>三、添加新接口</p><p><img src="https://cloud.anjing.eu.org/file/R7vNMzqh.jpg" alt="b718fff6a8e747b6a96a91730db5ba3b~tplv-tt-post_400_400.jpg"><img src="https://cloud.anjing.eu.org/file/06O4R4an.jpg" alt="c90a19061dab442db8d0401c2bd883da~tplv-shrink_1280_1006.jpg"></p><p><img src="https://cloud.anjing.eu.org/file/pBK1USX0.jpg" alt="f8ede86f645645278b0d981ab213452d~tplv-shrink_983_307.jpg"></p><p><img src="https://cloud.anjing.eu.org/file/ximqFyRi.jpg" alt="36f3b30e937f475f8f89836d3f42accc~tplv-shrink_1238_684.jpg"></p><p>然后保存应用</p><p>三、点击无线</p><p>1、点击启用，点击编辑</p><p><img src="https://cloud.anjing.eu.org/file/P5n9JVfk.jpg" alt="7d403d5c3b11491b99a6afa09766eb56~tplv-shrink_1011_575.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> N1盒子 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> N1盒子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GitHub图像化使用工具</title>
       <link href="/2025/08/25/2025.08.19_github%E5%9B%BE%E5%83%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
       <url>/2025/08/25/2025.08.19_github%E5%9B%BE%E5%83%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7/</url>

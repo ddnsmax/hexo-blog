@@ -20175,6 +20175,7 @@ body[data-type="album"] #page .page-title {
   }
 }
 
+/* ============ 你原有的样式（保留） ============ */
 h1#site-title {
   font-size: 3em !important;
 }
@@ -20391,6 +20392,80 @@ html.hide-aside .layout > div:first-child {
     opacity: 1;
   }
 }
+
+/* ============ 新增：标题 & 配色自适应 ============ */
+
+/* 1) 标题自适应：浅色黑、深色白 */
+:root {
+  --title-color: #111;            /* 浅色 */
+  --meta-color:  #666;            /* 浅色：元信息默认 */
+  --nav-color:   #666;            /* 浅色：导航默认 */
+}
+[data-theme="dark"] {
+  --title-color: #fff;            /* 深色 */
+  --meta-color:  #bfbfbf;         /* 深色：元信息 */
+  --nav-color:   #d0d0d0;         /* 深色：导航 */
+}
+
+.post-title,
+.post-title a,
+.article-title,
+.article-title a,
+h1.post-title,
+h1.post-title a {
+  color: var(--title-color) !important;
+}
+
+/* 2) 文章页元信息（作者/时间/地点/阅读数/标签/分类） */
+#post-info .post-meta,
+#post-info .post-meta a,
+#post-info .post-meta span,
+#post-info .post-meta i {
+  color: var(--meta-color) !important;
+}
+#post-info .post-meta .post-meta__tags a,
+#post-info .post-meta .post-meta__categories a {
+  color: var(--anzhiyu-theme) !important;
+}
+#post-info .post-meta .post-meta__tags a:hover,
+#post-info .post-meta .post-meta__categories a:hover {
+  color: var(--anzhiyu-main) !important;
+}
+/* 元信息透明度兜底，避免过淡 */
+#post-info .post-meta { opacity: 1 !important; }
+
+/* 3) 页头导航 / 右上图标 */
+#nav #site-name,
+#nav .menus_items > .menus_item > a,
+#page-header .rightside > div > a,
+#page-header .rightside > div > i,
+#nav .iconfont {
+  color: var(--nav-color) !important;
+}
+#nav .menus_items > .menus_item > a:hover,
+#page-header .rightside > div > a:hover {
+  color: var(--anzhiyu-theme) !important;
+  opacity: 1;
+}
+
+/* 4) 首页文章卡片元信息（日期/分类/标签等） */
+#recent-posts .recent-post-item .recent-post-info .article-meta-wrap,
+#recent-posts .recent-post-item .recent-post-info .article-meta-wrap span {
+  color: var(--meta-color) !important;
+}
+#recent-posts .recent-post-item .recent-post-info .article-meta-wrap a {
+  color: var(--anzhiyu-theme) !important;
+}
+#recent-posts .recent-post-item .recent-post-info .article-meta-wrap a:hover {
+  color: var(--anzhiyu-main) !important;
+}
+
+/* 5) 可选：列表页卡片标题 hover 使用主题色（已存在时保留优先级） */
+#recent-posts .recent-post-item:hover .recent-post-info .article-title {
+  color: var(--anzhiyu-theme);
+}
+
+/* 6) 细节：搜索弹窗/动画已保留，不做颜色侵入 */
 
 #aside-content .card-widget#card-wechat {
   background: #57bd6a;
