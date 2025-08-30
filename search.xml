@@ -4,6 +4,177 @@
   
     
     <entry>
+      <title>黑群晖一键修复：Advanced Media Extensions激活补丁</title>
+      <link href="/2025/08/30/2025.08.21_%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%80%E9%94%AE%E4%BF%AE%E5%A4%8D%EF%BC%9Aadvanced-media-extensions%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%B8%81/"/>
+      <url>/2025/08/30/2025.08.21_%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%80%E9%94%AE%E4%BF%AE%E5%A4%8D%EF%BC%9Aadvanced-media-extensions%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%B8%81/</url>
+      
+        <content type="html"><![CDATA[<p>只适用于x86_64的：DSM7.x Advanced Media Extensions (AME)版本3.0.1-2004、3.1.0-3005</p><p>激活过程需要下载官方的解码包，过程较慢，耐心等待。。。</p><h4 id="DSM7-1和7-2的AME版本不同，脚本不通用！！！！！！只适用于x86-64的，不支持armv8"><a href="#DSM7-1和7-2的AME版本不同，脚本不通用！！！！！！只适用于x86-64的，不支持armv8" class="headerlink" title="DSM7.1和7.2的AME版本不同，脚本不通用！！！！！！只适用于x86_64的，不支持armv8"></a>DSM7.1和7.2的AME版本不同，脚本不通用！！！！！！只适用于x86_64的，不支持armv8</h4><p>2023.12.5更新，集成了关闭apparmor保护，一直无法激活的可卸载AME、重启系统后重新安装再试试。</p><p>1、# DSM7.1 AME版本3.0.1-2004</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://code.imnks.com/ame3patch/ame71-2004.py | python</span><br></pre></td></tr></table></figure><p>2、# DSM7.2 AME版本3.1.0-3005（适合sa6400）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://code.imnks.com/ame3patch/ame72-3005.py | python</span><br></pre></td></tr></table></figure><p>来源：<a href="https://xpenology.com/forum/topic/65643-ame-30-patcher/">https://xpenology.com/forum/topic/65643-ame-30-patcher/</a></p><p>3、备用脚本（jim）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://code.imnks.com/ame3patch/ame72-3005.sh | bash</span><br></pre></td></tr></table></figure><p>详细信息：<a href="https://imnks.com/385.html">https://imnks.com/385.html</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 群晖nas </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WordPress如何绑定多个域名教程</title>
+      <link href="/2025/08/30/2025.08.21_wordpress%E5%A6%82%E4%BD%95%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D%E6%95%99%E7%A8%8B/"/>
+      <url>/2025/08/30/2025.08.21_wordpress%E5%A6%82%E4%BD%95%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<div style="position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 8px; overflow: hidden; background: #000;"><iframe  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"  src="https://player.bilibili.com/player.html?bvid=BV1wV4y1Q7ZQ&page=1&autoplay=0&high_quality=1"  scrolling="no"  frameborder="no"  allowfullscreen></iframe></div><p>使用过wordpress的站长应该都清楚，wordpress在安装的时候会默认绑定当前的域名，后续绑定其他的域名但是页面的链接也还是安装时候的域名。那么今天给大家分享一下wordpress绑定多个域名或者取消域名绑定限制的方法。</p><p>1、打开网站根目录下的wp-config.php，在<code>define(&#39;WP_DEBUG&#39;, false);</code>后面添加下面内容：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define(&#x27;WP_HOME&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define( &#x27;WP_CONTENT_URL&#x27;,  &#x27;//&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;] . &#x27;/wp-content&#x27;);</span><br></pre></td></tr></table></figure><p>2、群晖部署的输入下面代码才有删除、读取权限，放底部就行。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&quot;FS_METHOD&quot;, &quot;direct&quot;);</span><br><span class="line">define(&quot;FS_CHMOD_DIR&quot;, 0777); </span><br><span class="line">define(&quot;FS_CHMOD_FILE&quot;, 0777);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> WordPress </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>软路由科学上网插件</title>
+      <link href="/2025/08/30/2025.08.21_%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%8F%92%E4%BB%B6/"/>
+      <url>/2025/08/30/2025.08.21_%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%8F%92%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>链接地址：<a href="https://github.com/AUK9527/Are-u-ok/tree/main">https://github.com/AUK9527/Are-u-ok/tree/main</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 共计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GitHub图像化使用工具</title>
+      <link href="/2025/08/30/2025.08.19_github%E5%9B%BE%E5%83%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+      <url>/2025/08/30/2025.08.19_github%E5%9B%BE%E5%83%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7/</url>
+      
+        <content type="html"><![CDATA[<h3 id="GitHubDesktop：https-cloud-anjing-eu-org-file-CGCgQLv0-exe"><a href="#GitHubDesktop：https-cloud-anjing-eu-org-file-CGCgQLv0-exe" class="headerlink" title="GitHubDesktop：https://cloud.anjing.eu.org/file/CGCgQLv0.exe"></a>GitHubDesktop：<a href="https://cloud.anjing.eu.org/file/CGCgQLv0.exe">https://cloud.anjing.eu.org/file/CGCgQLv0.exe</a><a href="https://cloud.anjing.eu.org/file/CGCgQLv0.exe"></a></h3><h3 id="GitHub汉化工具：https-cloud-anjing-eu-org-file-2Ues1Y0y-7z"><a href="#GitHub汉化工具：https-cloud-anjing-eu-org-file-2Ues1Y0y-7z" class="headerlink" title="GitHub汉化工具：https://cloud.anjing.eu.org/file/2Ues1Y0y.7z"></a>GitHub汉化工具：<a href="https://cloud.anjing.eu.org/file/2Ues1Y0y.7z">https://cloud.anjing.eu.org/file/2Ues1Y0y.7z</a><a href="https://cloud.anjing.eu.org/file/2Ues1Y0y.7z"></a></h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>N1盒子docker安装</title>
+      <link href="/2025/08/30/2025.08.21_n1%E7%9B%92%E5%AD%90docker%E5%AE%89%E8%A3%85/"/>
+      <url>/2025/08/30/2025.08.21_n1%E7%9B%92%E5%AD%90docker%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<p>安装科学上网插件：<a href="https://github.com/AUK9527/Are-u-ok/tree/main/apps">https://github.com/AUK9527/Are-u-ok/tree/main/apps</a></p><p>有科学上网略过</p><p>x-ui安装:打开终端</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir x-ui &amp;&amp; cd x-ui</span><br><span class="line">wget https://raw.githubusercontent.com//enwaiax/x-ui/main/docker-compose.yml</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg install docker-compose</span><br></pre></td></tr></table></figure><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure><p>编辑</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure><p>输入“i”</p><p>把：enwaiax&#x2F;x-ui改成：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enwaiax/x-ui:alpha-zh</span><br></pre></td></tr></table></figure><p>unless-stopped改成：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">always</span><br></pre></td></tr></table></figure><p>按键:“esc”</p><p>输入：wq</p><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure><p>x-ui网站：<a href="https://hub.docker.com/r/enwaiax/x-ui">https://hub.docker.com/r/enwaiax/x-ui</a></p><p>cf内网穿透示例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run  --restart=always cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiMDRiNGQyNDExN2E2YTRhNDllNTkyNWNlZTYyYzc2OTIiLCJ0IjoiZmJmMDJhNGQtNjdiOC00MjlmLTk0YjAtMzk3MGVmMzFjNDViIiwicyI6Ik1qbGtOalJsTVRNdE56STNZaTAwTXprekxUazNNMlF0TVdNNVpHSXlaREk0TnpjeSJ9</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>群晖docker老版本下载（ContainerManager-x86）</title>
+      <link href="/2025/08/30/2025.08.21_%E7%BE%A4%E6%99%96docker%E8%80%81%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD%EF%BC%88containermanager-x86%EF%BC%89/"/>
+      <url>/2025/08/30/2025.08.21_%E7%BE%A4%E6%99%96docker%E8%80%81%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD%EF%BC%88containermanager-x86%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>最新可以编辑的版本：<a href="https://global.synologydownload.com/download/Package/spk/ContainerManager/20.10.23-1437/ContainerManager-x86_64-20.10.23-1437.spk">https://global.synologydownload.com/download/Package/spk/ContainerManager/20.10.23-1437/ContainerManager-x86_64-20.10.23-1437.spk</a><a href="https://global.synologydownload.com/download/Package/spk/ContainerManager/20.10.23-1437/ContainerManager-x86_64-20.10.23-1437.spk"></a></p><p>更多版本：<a href="https://archive.synology.cn/download/Package/ContainerManager">https://archive.synology.cn/download/Package/ContainerManager</a></p><p>其他套件：<a href="https://archive.synology.cn/download">https://archive.synology.cn/download</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 群晖 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu切换root</title>
+      <link href="/2025/08/30/2025.08.21_ubuntu%E5%88%87%E6%8D%A2root/"/>
+      <url>/2025/08/30/2025.08.21_ubuntu%E5%88%87%E6%8D%A2root/</url>
+      
+        <content type="html"><![CDATA[<p>一、进入管理员</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure><p>二、修改密码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd root</span><br></pre></td></tr></table></figure><p>然后输入密码（这个时候输入密码是不显示的）</p><p>三、</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure><p>四、输入“i”进入插入模式</p><p>显示– INSERT –说明进入插入模式。</p><p>找到：<br>#LoginGraceTime 2m<br>#PermitRootLogin prohibit-password</p><p>在下面输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootlogin yes</span><br></pre></td></tr></table></figure><p>五、保存</p><p>按esc键盘，输入：wq保存</p><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure><p>重启ssh</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>EdgeOne-Pages缩短网站链接</title>
+      <link href="/2025/08/30/2025.08.21_edgeone-pages%E7%BC%A9%E7%9F%AD%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5/"/>
+      <url>/2025/08/30/2025.08.21_edgeone-pages%E7%BC%A9%E7%9F%AD%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[<p>蓝奏云：<a href="https://wwhk.lanzoub.com/iYHRw30zatpi">https://wwhk.lanzoub.com/iYHRw30zatpi</a></p><p>备用链接：<a href="https://cloud.anjing.eu.org/file/6lH9x616.zip">https://cloud.anjing.eu.org/file/6lH9x616.zip</a></p><p><a href="https://cloud.anjing.eu.org/file/6lH9x616.zip"></a><br>KV空间都要改成：LINKS</p><p>项目作者github：<a href="https://github.com/hobk/eo-short">https://github.com/hobk/eo-short</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos7新装系统更新</title>
+      <link href="/2025/08/30/2025.08.21_centos7%E6%96%B0%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0/"/>
+      <url>/2025/08/30/2025.08.21_centos7%E6%96%B0%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0/</url>
+      
+        <content type="html"><![CDATA[<h3 id="执行如下命令安装新的源："><a href="#执行如下命令安装新的源：" class="headerlink" title="执行如下命令安装新的源："></a>执行如下命令安装新的源：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure><h3 id="若显示wget命令不存在"><a href="#若显示wget命令不存在" class="headerlink" title="若显示wget命令不存在"></a>若显示wget命令不存在</h3><p>需手动替换CentOS-Base.repo这个文件（文件路径：&#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo），替换成如下内容，建议直接复制粘贴替换原文件的内容，直接写入可能不生效：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"># CentOS-Base.repo</span><br><span class="line">#</span><br><span class="line"># The mirror system uses the connecting IP address of the client and the</span><br><span class="line"># update status of each mirror to pick mirrors that are updated to and</span><br><span class="line"># geographically close to the client.  You should use this for CentOS updates</span><br><span class="line"># unless you are manually picking other mirrors.</span><br><span class="line">#</span><br><span class="line"># If the mirrorlist= does not work for you, as a fall back you can try the </span><br><span class="line"># remarked out baseurl= line instead.</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">[base]</span><br><span class="line">name=CentOS-$releasever - Base - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/os/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/os/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/os/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#released updates </span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-$releasever - Updates - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/updates/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/updates/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/updates/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-$releasever - Extras - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/extras/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/extras/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/extras/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-$releasever - Plus - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#contrib - packages by Centos Users</span><br><span class="line">[contrib]</span><br><span class="line">name=CentOS-$releasever - Contrib - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/contrib/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/contrib/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/contrib/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure><p>最后执行如下命令完成：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line"> </span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure><p>参考链接：<a href="https://blog.csdn.net/m0_73646990/article/details/142096520">https://blog.csdn.net/m0_73646990/article/details/142096520</a></p><p>然后安装：wget工具</p><p>安装命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install wget</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>群晖nas证书自动更新</title>
       <link href="/2025/08/28/%E7%BE%A4%E6%99%96nas%E8%AF%81%E4%B9%A6%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/"/>
       <url>/2025/08/28/%E7%BE%A4%E6%99%96nas%E8%AF%81%E4%B9%A6%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
@@ -271,7 +442,7 @@
       <link href="/2025/08/28/nps%E5%92%8Cnpm%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/"/>
       <url>/2025/08/28/nps%E5%92%8Cnpm%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<p>NPS 服务端:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz</span><br></pre></td></tr></table></figure><p>解压文件：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf linux_amd64_server.tar.gz</span><br></pre></td></tr></table></figure><p>安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nps install</span><br></pre></td></tr></table></figure><p>&#x2F;etc&#x2F;nps&#x2F;conf&#x2F;nps.conf 修改 443 和 80 等冲突端口</p><p>打开 NPS：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nps start</span><br></pre></td></tr></table></figure><p>NPM：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://fly-uni.com/onekey/zhumao.sh &amp;&amp; chmod 700 ./zhumao.sh &amp;&amp; ./zhumao.sh</span><br></pre></td></tr></table></figure><p>打开npm面板：IP:端口81<br>默认用户名：<a href="mailto:&#97;&#x64;&#x6d;&#105;&#x6e;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#x6d;">admin@example.com</a> 默认密码：changeme （必须修改用户名和密码）。</p><p>PS：NPS如果下载了，把文件上传root文件里</p><p>打开 npm 面板：IP:端口 81<br>默认用户名：<a href="mailto:&#x61;&#100;&#109;&#x69;&#x6e;&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;">admin@example.com</a> 默认密码：changeme （必须修改用户名和密码）。</p><p>PS：NPS 如果下载了，把文件上传 root 文件里</p><p>文件下载：<a href="https://wwcz.lanzout.com/ilPWg2tn4sqd">https://wwcz.lanzout.com/ilPWg2tn4sqd</a></p><p>NPS 官网：NPS 官网：<a href="https://ehang-io.github.io/nps/#/">https://ehang-io.github.io/nps/#/</a></p>]]></content>
+        <content type="html"><![CDATA[<p>NPS 服务端:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz</span><br></pre></td></tr></table></figure><p>解压文件：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf linux_amd64_server.tar.gz</span><br></pre></td></tr></table></figure><p>安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nps install</span><br></pre></td></tr></table></figure><p>&#x2F;etc&#x2F;nps&#x2F;conf&#x2F;nps.conf 修改 443 和 80 等冲突端口</p><p>打开 NPS：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nps start</span><br></pre></td></tr></table></figure><p>NPM：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://fly-uni.com/onekey/zhumao.sh &amp;&amp; chmod 700 ./zhumao.sh &amp;&amp; ./zhumao.sh</span><br></pre></td></tr></table></figure><p>打开npm面板：IP:端口81<br>默认用户名：<a href="mailto:&#x61;&#x64;&#109;&#x69;&#110;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">admin@example.com</a> 默认密码：changeme （必须修改用户名和密码）。</p><p>PS：NPS如果下载了，把文件上传root文件里</p><p>打开 npm 面板：IP:端口 81<br>默认用户名：<a href="mailto:&#x61;&#x64;&#x6d;&#x69;&#x6e;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">admin@example.com</a> 默认密码：changeme （必须修改用户名和密码）。</p><p>PS：NPS 如果下载了，把文件上传 root 文件里</p><p>文件下载：<a href="https://wwcz.lanzout.com/ilPWg2tn4sqd">https://wwcz.lanzout.com/ilPWg2tn4sqd</a></p><p>NPS 官网：NPS 官网：<a href="https://ehang-io.github.io/nps/#/">https://ehang-io.github.io/nps/#/</a></p>]]></content>
       
       
       <categories>
@@ -361,177 +532,6 @@
         <tags>
             
             <tag> N1盒子 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>GitHub图像化使用工具</title>
-      <link href="/2025/08/25/2025.08.19_github%E5%9B%BE%E5%83%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-      <url>/2025/08/25/2025.08.19_github%E5%9B%BE%E5%83%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7/</url>
-      
-        <content type="html"><![CDATA[<h3 id="GitHubDesktop：https-cloud-anjing-eu-org-file-CGCgQLv0-exe"><a href="#GitHubDesktop：https-cloud-anjing-eu-org-file-CGCgQLv0-exe" class="headerlink" title="GitHubDesktop：https://cloud.anjing.eu.org/file/CGCgQLv0.exe"></a>GitHubDesktop：<a href="https://cloud.anjing.eu.org/file/CGCgQLv0.exe">https://cloud.anjing.eu.org/file/CGCgQLv0.exe</a><a href="https://cloud.anjing.eu.org/file/CGCgQLv0.exe"></a></h3><h3 id="GitHub汉化工具：https-cloud-anjing-eu-org-file-2Ues1Y0y-7z"><a href="#GitHub汉化工具：https-cloud-anjing-eu-org-file-2Ues1Y0y-7z" class="headerlink" title="GitHub汉化工具：https://cloud.anjing.eu.org/file/2Ues1Y0y.7z"></a>GitHub汉化工具：<a href="https://cloud.anjing.eu.org/file/2Ues1Y0y.7z">https://cloud.anjing.eu.org/file/2Ues1Y0y.7z</a><a href="https://cloud.anjing.eu.org/file/2Ues1Y0y.7z"></a></h3>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>软路由科学上网插件</title>
-      <link href="/2025/08/25/2025.08.21_%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%8F%92%E4%BB%B6/"/>
-      <url>/2025/08/25/2025.08.21_%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%8F%92%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p>链接地址：<a href="https://github.com/AUK9527/Are-u-ok/tree/main">https://github.com/AUK9527/Are-u-ok/tree/main</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 共计 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>群晖docker老版本下载（ContainerManager-x86）</title>
-      <link href="/2025/08/25/2025.08.21_%E7%BE%A4%E6%99%96docker%E8%80%81%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD%EF%BC%88containermanager-x86%EF%BC%89/"/>
-      <url>/2025/08/25/2025.08.21_%E7%BE%A4%E6%99%96docker%E8%80%81%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD%EF%BC%88containermanager-x86%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<p>最新可以编辑的版本：<a href="https://global.synologydownload.com/download/Package/spk/ContainerManager/20.10.23-1437/ContainerManager-x86_64-20.10.23-1437.spk">https://global.synologydownload.com/download/Package/spk/ContainerManager/20.10.23-1437/ContainerManager-x86_64-20.10.23-1437.spk</a><a href="https://global.synologydownload.com/download/Package/spk/ContainerManager/20.10.23-1437/ContainerManager-x86_64-20.10.23-1437.spk"></a></p><p>更多版本：<a href="https://archive.synology.cn/download/Package/ContainerManager">https://archive.synology.cn/download/Package/ContainerManager</a></p><p>其他套件：<a href="https://archive.synology.cn/download">https://archive.synology.cn/download</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 群晖 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>黑群晖一键修复：Advanced Media Extensions激活补丁</title>
-      <link href="/2025/08/25/2025.08.21_%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%80%E9%94%AE%E4%BF%AE%E5%A4%8D%EF%BC%9Aadvanced-media-extensions%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%B8%81/"/>
-      <url>/2025/08/25/2025.08.21_%E9%BB%91%E7%BE%A4%E6%99%96%E4%B8%80%E9%94%AE%E4%BF%AE%E5%A4%8D%EF%BC%9Aadvanced-media-extensions%E6%BF%80%E6%B4%BB%E8%A1%A5%E4%B8%81/</url>
-      
-        <content type="html"><![CDATA[<p>只适用于x86_64的：DSM7.x Advanced Media Extensions (AME)版本3.0.1-2004、3.1.0-3005</p><p>激活过程需要下载官方的解码包，过程较慢，耐心等待。。。</p><h4 id="DSM7-1和7-2的AME版本不同，脚本不通用！！！！！！只适用于x86-64的，不支持armv8"><a href="#DSM7-1和7-2的AME版本不同，脚本不通用！！！！！！只适用于x86-64的，不支持armv8" class="headerlink" title="DSM7.1和7.2的AME版本不同，脚本不通用！！！！！！只适用于x86_64的，不支持armv8"></a>DSM7.1和7.2的AME版本不同，脚本不通用！！！！！！只适用于x86_64的，不支持armv8</h4><p>2023.12.5更新，集成了关闭apparmor保护，一直无法激活的可卸载AME、重启系统后重新安装再试试。</p><p>1、# DSM7.1 AME版本3.0.1-2004</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://code.imnks.com/ame3patch/ame71-2004.py | python</span><br></pre></td></tr></table></figure><p>2、# DSM7.2 AME版本3.1.0-3005（适合sa6400）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://code.imnks.com/ame3patch/ame72-3005.py | python</span><br></pre></td></tr></table></figure><p>来源：<a href="https://xpenology.com/forum/topic/65643-ame-30-patcher/">https://xpenology.com/forum/topic/65643-ame-30-patcher/</a></p><p>3、备用脚本（jim）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://code.imnks.com/ame3patch/ame72-3005.sh | bash</span><br></pre></td></tr></table></figure><p>详细信息：<a href="https://imnks.com/385.html">https://imnks.com/385.html</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 群晖nas </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>WordPress如何绑定多个域名教程</title>
-      <link href="/2025/08/25/2025.08.21_wordpress%E5%A6%82%E4%BD%95%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D%E6%95%99%E7%A8%8B/"/>
-      <url>/2025/08/25/2025.08.21_wordpress%E5%A6%82%E4%BD%95%E7%BB%91%E5%AE%9A%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D%E6%95%99%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[<div style="position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 8px; overflow: hidden; background: #000;"><iframe  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"  src="https://player.bilibili.com/player.html?bvid=BV1wV4y1Q7ZQ&page=1&autoplay=0&high_quality=1"  scrolling="no"  frameborder="no"  allowfullscreen></iframe></div><p>使用过wordpress的站长应该都清楚，wordpress在安装的时候会默认绑定当前的域名，后续绑定其他的域名但是页面的链接也还是安装时候的域名。那么今天给大家分享一下wordpress绑定多个域名或者取消域名绑定限制的方法。</p><p>1、打开网站根目录下的wp-config.php，在<code>define(&#39;WP_DEBUG&#39;, false);</code>后面添加下面内容：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define(&#x27;WP_HOME&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);</span><br><span class="line">define( &#x27;WP_CONTENT_URL&#x27;,  &#x27;//&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;] . &#x27;/wp-content&#x27;);</span><br></pre></td></tr></table></figure><p>2、群晖部署的输入下面代码才有删除、读取权限，放底部就行。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(&quot;FS_METHOD&quot;, &quot;direct&quot;);</span><br><span class="line">define(&quot;FS_CHMOD_DIR&quot;, 0777); </span><br><span class="line">define(&quot;FS_CHMOD_FILE&quot;, 0777);</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> WordPress </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Ubuntu切换root</title>
-      <link href="/2025/08/25/2025.08.21_ubuntu%E5%88%87%E6%8D%A2root/"/>
-      <url>/2025/08/25/2025.08.21_ubuntu%E5%88%87%E6%8D%A2root/</url>
-      
-        <content type="html"><![CDATA[<p>一、进入管理员</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure><p>二、修改密码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd root</span><br></pre></td></tr></table></figure><p>然后输入密码（这个时候输入密码是不显示的）</p><p>三、</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure><p>四、输入“i”进入插入模式</p><p>显示– INSERT –说明进入插入模式。</p><p>找到：<br>#LoginGraceTime 2m<br>#PermitRootLogin prohibit-password</p><p>在下面输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootlogin yes</span><br></pre></td></tr></table></figure><p>五、保存</p><p>按esc键盘，输入：wq保存</p><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure><p>重启ssh</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>N1盒子docker安装</title>
-      <link href="/2025/08/25/2025.08.21_n1%E7%9B%92%E5%AD%90docker%E5%AE%89%E8%A3%85/"/>
-      <url>/2025/08/25/2025.08.21_n1%E7%9B%92%E5%AD%90docker%E5%AE%89%E8%A3%85/</url>
-      
-        <content type="html"><![CDATA[<p>安装科学上网插件：<a href="https://github.com/AUK9527/Are-u-ok/tree/main/apps">https://github.com/AUK9527/Are-u-ok/tree/main/apps</a></p><p>有科学上网略过</p><p>x-ui安装:打开终端</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir x-ui &amp;&amp; cd x-ui</span><br><span class="line">wget https://raw.githubusercontent.com//enwaiax/x-ui/main/docker-compose.yml</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg install docker-compose</span><br></pre></td></tr></table></figure><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure><p>编辑</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure><p>输入“i”</p><p>把：enwaiax&#x2F;x-ui改成：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enwaiax/x-ui:alpha-zh</span><br></pre></td></tr></table></figure><p>unless-stopped改成：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">always</span><br></pre></td></tr></table></figure><p>按键:“esc”</p><p>输入：wq</p><p>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure><p>x-ui网站：<a href="https://hub.docker.com/r/enwaiax/x-ui">https://hub.docker.com/r/enwaiax/x-ui</a></p><p>cf内网穿透示例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run  --restart=always cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiMDRiNGQyNDExN2E2YTRhNDllNTkyNWNlZTYyYzc2OTIiLCJ0IjoiZmJmMDJhNGQtNjdiOC00MjlmLTk0YjAtMzk3MGVmMzFjNDViIiwicyI6Ik1qbGtOalJsTVRNdE56STNZaTAwTXprekxUazNNMlF0TVdNNVpHSXlaREk0TnpjeSJ9</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>EdgeOne-Pages缩短网站链接</title>
-      <link href="/2025/08/25/2025.08.21_edgeone-pages%E7%BC%A9%E7%9F%AD%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5/"/>
-      <url>/2025/08/25/2025.08.21_edgeone-pages%E7%BC%A9%E7%9F%AD%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5/</url>
-      
-        <content type="html"><![CDATA[<p>蓝奏云：<a href="https://wwhk.lanzoub.com/iYHRw30zatpi">https://wwhk.lanzoub.com/iYHRw30zatpi</a></p><p>备用链接：<a href="https://cloud.anjing.eu.org/file/6lH9x616.zip">https://cloud.anjing.eu.org/file/6lH9x616.zip</a></p><p><a href="https://cloud.anjing.eu.org/file/6lH9x616.zip"></a><br>KV空间都要改成：LINKS</p><p>项目作者github：<a href="https://github.com/hobk/eo-short">https://github.com/hobk/eo-short</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 源码 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>centos7新装系统更新</title>
-      <link href="/2025/08/25/2025.08.21_centos7%E6%96%B0%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0/"/>
-      <url>/2025/08/25/2025.08.21_centos7%E6%96%B0%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0/</url>
-      
-        <content type="html"><![CDATA[<h3 id="执行如下命令安装新的源："><a href="#执行如下命令安装新的源：" class="headerlink" title="执行如下命令安装新的源："></a>执行如下命令安装新的源：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure><h3 id="若显示wget命令不存在"><a href="#若显示wget命令不存在" class="headerlink" title="若显示wget命令不存在"></a>若显示wget命令不存在</h3><p>需手动替换CentOS-Base.repo这个文件（文件路径：&#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo），替换成如下内容，建议直接复制粘贴替换原文件的内容，直接写入可能不生效：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"># CentOS-Base.repo</span><br><span class="line">#</span><br><span class="line"># The mirror system uses the connecting IP address of the client and the</span><br><span class="line"># update status of each mirror to pick mirrors that are updated to and</span><br><span class="line"># geographically close to the client.  You should use this for CentOS updates</span><br><span class="line"># unless you are manually picking other mirrors.</span><br><span class="line">#</span><br><span class="line"># If the mirrorlist= does not work for you, as a fall back you can try the </span><br><span class="line"># remarked out baseurl= line instead.</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">[base]</span><br><span class="line">name=CentOS-$releasever - Base - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/os/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/os/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/os/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#released updates </span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-$releasever - Updates - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/updates/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/updates/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/updates/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-$releasever - Extras - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/extras/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/extras/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/extras/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-$releasever - Plus - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/centosplus/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#contrib - packages by Centos Users</span><br><span class="line">[contrib]</span><br><span class="line">name=CentOS-$releasever - Contrib - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/$releasever/contrib/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/$releasever/contrib/$basearch/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/$releasever/contrib/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure><p>最后执行如下命令完成：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line"> </span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure><p>参考链接：<a href="https://blog.csdn.net/m0_73646990/article/details/142096520">https://blog.csdn.net/m0_73646990/article/details/142096520</a></p><p>然后安装：wget工具</p><p>安装命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install wget</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
             
         </tags>
       
