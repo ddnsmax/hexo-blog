@@ -1,3 +1,3 @@
-var posts=["posts/df08/","posts/b678/","posts/ac/","posts/fc34/","posts/65f/","posts/8af/","posts/8a5d/","posts/2f8c/","posts/c0b6/","posts/5c8e/","posts/e64d/","posts/9b3a/","posts/0d92/","posts/7b21/","posts/6a09/","posts/d1c5/","posts/8f3b/","posts/5d2e/","posts/9f08/","posts/7e4a/","posts/2a76/","posts/3e+94/","posts/a3f7/","posts/f712/","posts/3b9c/","posts/a1c3/","posts/4c7e/","posts/6b4d/","posts/0e8f/"];function toRandomPost(){
+var posts=["posts/df08/","posts/b678/","posts/fc34/","posts/65f/","posts/8af/","posts/8a5d/","posts/2f8c/","posts/c0b6/","posts/5c8e/","posts/e64d/","posts/9b3a/","posts/0d92/","posts/7b21/","posts/6a09/","posts/d1c5/","posts/8f3b/","posts/5d2e/","posts/9f08/","posts/7e4a/","posts/2a76/","posts/3e+94/","posts/a3f7/","posts/f712/","posts/3b9c/","posts/a1c3/","posts/4c7e/","posts/6b4d/","posts/0e8f/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
