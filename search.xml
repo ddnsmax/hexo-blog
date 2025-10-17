@@ -8,7 +8,7 @@
       <link href="/posts/adfc/"/>
       <url>/posts/adfc/</url>
       
-        <content type="html"><![CDATA[<p>按 Win+R 输入 regedit 打开注册表编辑器</p><p>定位路径：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced</span><br></pre></td></tr></table></figure><p>创建或修改 <code>ShowSecondsInSystemClock</code> 项，设为 <code>1</code>（<code>DWORD</code> 类型）即可在任务栏时钟显示秒数</p>]]></content>
+        <content type="html"><![CDATA[<p>方案一：下载直接双击安装，<a href="https://xiaochennote.lanzoub.com/i1sOu38nn0xg">https://xiaochennote.lanzoub.com/i1sOu38nn0xg</a></p><p>方案二：按 Win+R 输入 regedit 打开注册表编辑器 a</p><p>定位路径：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced</span><br></pre></td></tr></table></figure><p>创建或修改 <code>ShowSecondsInSystemClock</code> 项，设为 <code>1</code>（<code>DWORD</code> 类型）即可在任务栏时钟显示秒数</p>]]></content>
       
       
       <categories>
