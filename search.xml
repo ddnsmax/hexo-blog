@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Windows系统显示秒</title>
+      <link href="/posts/adfc/"/>
+      <url>/posts/adfc/</url>
+      
+        <content type="html"><![CDATA[<p>按 Win+R 输入 regedit 打开注册表编辑器</p><p>定位路径：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced</span><br></pre></td></tr></table></figure><p>创建或修改 <code>ShowSecondsInSystemClock</code> 项，设为 <code>1</code>（<code>DWORD</code> 类型）即可在任务栏时钟显示秒数</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记心得 </category>
+          
+          <category> 安装流程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记心得 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>v2rayN下载和安装</title>
       <link href="/posts/eff5/"/>
       <url>/posts/eff5/</url>
