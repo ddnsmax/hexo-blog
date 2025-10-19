@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IN10 WIN11 12代 13代 大小核 隐藏电源选项 runliuv</title>
+      <link href="/posts/1104/"/>
+      <url>/posts/1104/</url>
+      
+        <content type="html"><![CDATA[<p>WIN10 WIN11 12 代 13 代 大小核 隐藏电源选项 runliuv</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -attributes SUB_PROCESSOR 7f2f5cfa-f10c-4823-b5e1-e93ae85f46b5 -ATTRIB_HIDE</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -attributes SUB_PROCESSOR 93b8b6dc-0698-4d1c-9ee4-0644e900c85d -ATTRIB_HIDE</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -attributes SUB_PROCESSOR bae08b81-2d5e-4688-ad6a-13243356654b -ATTRIB_HIDE</span><br></pre></td></tr></table></figure><p>可以复制命令，在“Windows PowerShell （管理员）”界面上点击右键，即可粘贴命令。</p><p>3。执行后，电源选项-高级设置中就会出现三个选项。</p><p>3。1：生效的异类策略，选择“使用异类策略 0”。</p><p>3。2：异类线程调度策略，选择“首选高性能处理器”。</p><p>3。3：异类短运行线程调度策略，选择“首选高性能处理器”。</p><p><img src="https://pan.l42.cn/d/%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%BA%8A/%E5%A4%A7%E5%B0%8F%E6%A0%B8%E5%BF%831.png?sign=gEufKvnlhZacEXsw7s8AEiKycq0Eayok2OWZrZCUxCA=:0"></p><p>这样设置后，就会优先使用大核。</p><p>任务管理器：</p><p><img src="https://pan.l42.cn/d/%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%BA%8A/%E5%A4%A7%E5%B0%8F%E6%A0%B8%E5%BF%832.png?sign=fq8eEe_Xo9_T4xTEXcj1rErTXTVTpECknYYnEhE_flI=:0"></p><p>打开 VS：</p><p><img src="https://pan.l42.cn/d/%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%BA%8A/%E5%A4%A7%E5%B0%8F%E6%A0%B8%E5%BF%833.png?sign=PKUaBLBYH0TxRfxXlFWr-D_zepF7FZGTvoYEiulacCk=:0"></p><p>其它说明：</p><p>“使用异类策略 0”，这个是使用 CPU 所有核心。</p><p>“异类线程调度策略”，这个类似于高功耗任务进程。</p><p>“异类短运行线程调度策略”，这个类似于低功耗任务进程。</p><p>三条命令说明：</p><p>在电源选项中查看：生效的异类策略<br>powercfg -attributes SUB_PROCESSOR 7f2f5cfa-f10c-4823-b5e1-e93ae85f46b5 -ATTRIB_HIDE</p><p>在电源选项中查看：异类线程调度策略<br>powercfg -attributes SUB_PROCESSOR 93b8b6dc-0698-4d1c-9ee4-0644e900c85d -ATTRIB_HIDE</p><p>在电源选项中查看：异类短运行线程调度策略<br>powercfg -attributes SUB_PROCESSOR bae08b81-2d5e-4688-ad6a-13243356654b -ATTRIB_HIDE</p><p>参照了：<a href="https://www.bilibili.com/video/BV1LK411B7ZS/?vd%5C_source=097066e569d78097a96114b235f5a3d8%E3%80%82">https://www.bilibili.com/video/BV1LK411B7ZS/?vd\_source=097066e569d78097a96114b235f5a3d8。</a></p><p>–额外说明–</p><p>WIN10 默认是：</p><p>生效的异类策略：使用异类策略 4.</p><p>异类线程调度策略：自动。</p><p>异类短运行线程调度策略：自动。</p><p>WIN11 默认是：</p><p>生效的异类策略：使用异类策略 0.</p><p>异类线程调度策略：自动。</p><p>异类短运行线程调度策略：自动。</p><p>我个人推荐：</p><p>生效的异类策略：使用异类策略 0.</p><p>异类线程调度策略：首选高性能处理器。</p><p>异类短运行线程调度策略：首选高性能处理器。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记心得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记心得 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows系统显示秒</title>
       <link href="/posts/adfc/"/>
       <url>/posts/adfc/</url>
