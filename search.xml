@@ -218,31 +218,6 @@
     
     
     <entry>
-      <title>v2rayN下载和安装</title>
-      <link href="/posts/eff5/"/>
-      <url>/posts/eff5/</url>
-      
-        <content type="html"><![CDATA[<p>下载链接：<a href="https://github.com/2dust/v2rayN">https://github.com/2dust/v2rayN</a></p><p>Mac:<a href="https://pan.l42.cn/d/2TB%E4%BA%91%E7%9B%98/v2rayN-macos-64.dmg">https://pan.l42.cn/d/2TB%E4%BA%91%E7%9B%98/v2rayN-macos-64.dmg</a></p><p>Mac 电脑打开时如果提示“v2rayN 已损坏，无法打开”，不要移除，请在终端窗口运行以下命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xattr -cr /Applications/v2rayN.app</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安装流程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 安装流程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>全家桶下载</title>
       <link href="/posts/e232/"/>
       <url>/posts/e232/</url>
@@ -361,25 +336,6 @@
         <tags>
             
             <tag> WordPress </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>软路由科学上网插件</title>
-      <link href="/posts/c0b6/"/>
-      <url>/posts/c0b6/</url>
-      
-        <content type="html"><![CDATA[<p>链接地址：<a href="https://github.com/AUK9527/Are-u-ok/tree/main">https://github.com/AUK9527/Are-u-ok/tree/main</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 共计 </tag>
             
         </tags>
       
